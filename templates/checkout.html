@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | Dog do Gringo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='checkout.css') }}">
+</head>
+<body>
+
+<div class="checkout">
+
+  <!-- TOPO -->
+  <header>
+    <h1>Finalizar Pedido</h1>
+    <span id="protocolo"></span>
+  </header>
+
+  <!-- TIPO DE PEDIDO -->
+  <div class="tipo-pedido">
+  <label>
+    <input type="radio" name="tipo_pedido" value="balcao" checked>
+    Retirar no balcão
+  </label>
+
+  <label>
+    <input type="radio" name="tipo_pedido" value="tele_entrega">
+    Entrega
+  </label>
+</div>
+
+
+
+
+  <!-- CLIENTE -->
+  <section class="cliente">
+    <h2>Cliente</h2>
+
+    <div class="busca">
+      <input type="text" id="telefone" placeholder="Telefone">
+      <button id="buscar">🔍</button>
+    </div>
+
+    <div id="clienteInfo" class="cliente-info hidden">
+      <input id="nome" placeholder="Nome">
+      <input id="endereco" placeholder="Endereço">
+      <textarea id="observacoes" placeholder="Observações"></textarea>
+    </div>
+  </section>
+
+  <!-- RESUMO -->
+  <section class="resumo">
+    <h2>Resumo do Pedido</h2>
+
+    <div id="itens"></div>
+
+    <div class="total">
+      Total: R$ <span id="total">0.00</span>
+    </div>
+
+    <button id="gerarPedido">GERAR PEDIDO</button>
+  </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='checkout.js') }}"></script>
+</body>
+</html>

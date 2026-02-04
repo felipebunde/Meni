@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Novo Pedido | Dog do Gringo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='cardapio.css') }}">
+</head>
+<body>
+
+<div class="kiosk">
+
+  <!-- CARDÁPIO -->
+  <section class="menu-area">
+    <h1>Escolha seu lanche</h1>
+
+    <div class="grid" id="produtos"></div>
+  </section>
+
+  <!-- PEDIDO -->
+  <aside class="pedido">
+    <h2>Meu Pedido</h2>
+
+    <div id="listaPedido"></div>
+
+    <div class="total">
+      Total: R$ <span id="total">0.00</span>
+    </div>
+
+    <button id="finalizar">Finalizar Pedido</button>
+  </aside>
+
+</div>
+
+<script src="{{ url_for('static', filename='cardapio.js') }}"></script>
+</body>
+</html>

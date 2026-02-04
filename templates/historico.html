@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dog do Gringo | Histórico</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='historico.css') }}">
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- MENU -->
+    <aside class="menu">
+      <div class="logo">
+        <img src="{{ url_for('static', filename='icon.png') }}" alt="Dog do Gringo">
+      </div>
+
+      <a href="/" class="btn">
+        ⬅ VOLTAR
+      </a>
+    </aside>
+
+    <!-- PAINEL -->
+    <main class="painel historico">
+      <h2>📜 Histórico de Pedidos</h2>
+
+      <div id="listaHistorico" class="lista-historico"></div>
+    </main>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='historico.js') }}"></script>
+</body>
+</html>

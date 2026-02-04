@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dog do Gringo | Painel</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- MENU -->
+    <aside class="menu">
+<div class="logo">
+        <img src="{{ url_for('static', filename='icon.png') }}" alt="Dog do Gringo">
+      </div>
+      <!-- BUSCA DE CLIENTE -->
+      <div class="cliente-box">
+        <input type="text" id="clienteTelefone" placeholder="👤Telefone do cliente" autocomplete="off" />
+      </div>
+      
+      <a href="/cardapio" class="btn novo-pedido">
+        📝 NOVO PEDIDO
+      </a>
+      <a href="/historico" class="btn historico">
+        📜 HISTÓRICO
+      </a>
+      <a href="/produtos" class="btn historico">
+        🛍️ GERENCIAR PRODUTOS
+      </a>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='nina.png') }}" alt="Dog do Gringo">
+      </div>
+    </aside>
+
+
+    <!-- PAINEL -->
+    <main class="painel">
+
+
+
+      <section class="coluna preparo">
+        <div class="titulo"> 🟡 EM ANDAMENTO 🟡</div>
+        <div class="lista"></div>
+      </section>
+
+      <section class="coluna balcao">
+        <div class="titulo">🟢 BALCÃO 🟢</div>
+        <div class="lista"></div>
+      </section>
+
+      <section class="coluna entrega">
+        <div class="titulo">🏍️ EM ENTREGA 🏍️</div>
+        <div class="lista"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ================= MODAL da nota ================= -->
+  <div id="notaModal" class="modal hidden">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2>🧾 Nota do Pedido</h2>
+        <button type="button" onclick="fecharNota()">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div id="notaInfo" class="nota-info"></div>
+        <div id="notaItens" class="nota-itens"></div>
+      </div>
+
+      <div class="modal-footer">
+        <!-- BOTÃO: MARCAR PRONTO -->
+        <button id="btnPronto" class="btn">
+          MARCAR COMO PRONTO
+        </button>
+
+        <!-- BOTÃO: ENTREGAR / FINALIZAR -->
+        <button id="btnEntregar" class="btn finalizar">
+          FINALIZAR / ENTREGAR
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= MODAL CLIENTE ================= -->
+  <div id="clienteModal" class="modal hidden"><!-- ================= MODAL PRODUTOS ================= -->
+    <div id="produtosModal" class="modal hidden">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h2>🧰 Gerenciar Produtos</h2>
+          <button type="button" onclick="fecharProdutos()">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <p>Aqui vai o gerenciamento de produtos.</p>
+
+          <!-- depois entra tabela / lista / formulário -->
+          <button class="btn">➕ Novo Produto</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2>👤 Cliente</h2>
+        <button type="button" onclick="fecharCliente()">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div id="clienteInfo"></div>
+
+        <h3>Últimos pedidos</h3>
+        <div id="clientePedidos"></div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

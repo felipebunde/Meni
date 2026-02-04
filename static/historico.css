@@ -1,0 +1,47 @@
+/* ===============================
+   HISTÓRICO
+================================ */
+
+.painel.historico {
+  flex-direction: column;
+}
+
+/* LISTA */
+
+.lista-historico {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* CARD DO HISTÓRICO */
+
+.historico-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  font-size: 14px;
+  color: #222;
+}
+
+/* LINHAS */
+
+.historico-card .linha {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.historico-card .linha strong {
+  font-size: 15px;
+}
+
+/* DESTAQUE */
+
+.historico-card .destaque {
+  margin-top: 8px;
+  font-weight: 700;
+  color: #d62828; /* vermelho marca */
+}
