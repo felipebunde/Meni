@@ -1,2 +1,2 @@
 # PDV
-Sistema de PDV criado pensando no usuário.
+Sistema de PDV criado pensando no operador. 
